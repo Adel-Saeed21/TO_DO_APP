@@ -10,6 +10,13 @@ class TaskModel extends Equatable {
     required this.title,
     required this.isCompleted,
   });
+  TaskModel copywith({int? id, String? title, bool? isCompleted}) {
+    return TaskModel(
+      id: id ?? this.id,
+      title: title ?? this.title,
+      isCompleted: isCompleted ?? this.isCompleted,
+    );
+  }
 
   @override
   List<Object?> get props => [id, title, isCompleted];

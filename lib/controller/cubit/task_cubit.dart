@@ -5,8 +5,17 @@ import 'package:todo/controller/cubit/task_state.dart';
 class TaskCubit extends Cubit<TaskState> {
   TaskCubit() : super(TaskInitial());
 
-  addTask(TaskModel model) {}
+  addTask(TaskModel model) {
+    emit(UpdateTask([...state.taskList, model]));
+  }
 
-  removeTask(int id) {}
-  toggleTask() {}
+  removeTask(int id) {
+    final List<TaskModel> newLust =
+        state.taskList.where((e) => e.id != id).toList();
+    emit(UpdateTask(newLust));
+  }
+
+  toggleTask() {
+     
+  }
 }
