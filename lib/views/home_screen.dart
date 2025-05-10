@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'package:todo/controller/cubit/task_cubit.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:todo/controller/cubit/task_state.dart';
 import 'package:todo/views/widget/home_screen_body.dart';
 
 class HomeScreen extends StatelessWidget {
- const HomeScreen({super.key, this.title});
+  const HomeScreen({super.key, this.title});
 
   final String? title;
   @override
@@ -24,16 +21,7 @@ class HomeScreen extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.indigo,
       ),
-      body: BlocProvider(
-        create: (context) => TaskCubit(),
-        child: BlocBuilder<TaskCubit, TaskState>(
-          builder: (context, state) {
-            return const HomeScreenBody();
-          },
-        ),
-      ),
+      body: const HomeScreenBody(),
     );
   }
 }
-
-
