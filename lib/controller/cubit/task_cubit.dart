@@ -15,7 +15,11 @@ class TaskCubit extends Cubit<TaskState> {
     emit(UpdateTask(newLust));
   }
 
-  toggleTask() {
-     
+  toggleTask(int id) {
+    final List<TaskModel> newList =
+        state.taskList.map((e) {
+          return e.id == id ? e.copywith(isCompleted: !e.isCompleted) : e;
+        }).toList();
+    emit(UpdateTask(newList));
   }
 }
