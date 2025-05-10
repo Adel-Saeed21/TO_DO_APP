@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:todo/constant.dart';
 
 class CustomTextField extends StatelessWidget {
-  CustomTextField({super.key});
-  final TextEditingController controller = TextEditingController();
+  const CustomTextField({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +19,6 @@ class CustomTextField extends StatelessWidget {
 
   OutlineInputBorder decore(double rad) => OutlineInputBorder(
     borderRadius: BorderRadius.circular(rad),
-    borderSide: BorderSide(color: Colors.indigo),
+    borderSide:const  BorderSide(color: Colors.indigo),
   );
 }

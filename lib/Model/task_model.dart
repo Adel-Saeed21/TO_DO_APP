@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 class TaskModel extends Equatable {
-  final int id;
+  final String id;
   final String title;
   final bool isCompleted;
 
@@ -10,7 +10,7 @@ class TaskModel extends Equatable {
     required this.title,
     required this.isCompleted,
   });
-  TaskModel copywith({int? id, String? title, bool? isCompleted}) {
+  TaskModel copywith({String? id, String? title, bool? isCompleted}) {
     return TaskModel(
       id: id ?? this.id,
       title: title ?? this.title,
